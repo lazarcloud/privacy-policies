@@ -1,10 +1,9 @@
 <script>
-  import { goto } from "$app/navigation"
   import { onMount } from "svelte"
 
   onMount(() => {
-    goto("https://lazar.lol")
+    location.href = "https://lazar.lol/"
   })
 </script>
 
-<h1>Hel;o!</h1>
+<h1>Hello!</h1>
