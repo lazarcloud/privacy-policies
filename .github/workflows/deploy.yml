@@ -1,4 +1,4 @@
-name: Deploy Docs Website to Pages
+name: Deploy Website to Pages
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: cd docs && npm i
+        run: cd app && npm i
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -39,12 +39,12 @@ jobs:
           static_site_generator: "sveltekit"
 
       - name: Build site
-        run: cd docs && npm run build
+        run: cd app && npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "docs/build/"
+          path: "app/build/"
 
   deploy:
     needs: build-site
